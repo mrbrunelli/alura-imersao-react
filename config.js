@@ -1,6 +1,6 @@
-import db from './db.json'
+import db from './db.json';
 
-export const MY_SEO = {
+const MY_SEO = {
   title: 'Alura Quiz App',
   description: 'App de Quiz criado durante o evento Imersão React Next.js',
   openGraph: {
@@ -9,5 +9,7 @@ export const MY_SEO = {
     title: 'App de Quiz - github/mrbrunelli',
     description: 'Minha versão do App de Quiz',
     image: db.bg,
-  }
-}
+  },
+};
+
+export default MY_SEO;
