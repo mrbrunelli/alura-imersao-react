@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
   background-color: #00000070;
@@ -22,7 +22,7 @@ const FooterWrapper = styled.footer`
       text-decoration: underline;
     }
   }
-`
+`;
 export default function Footer(props) {
   return (
     <FooterWrapper {...props}>
@@ -39,5 +39,5 @@ export default function Footer(props) {
         </a>
       </p>
     </FooterWrapper>
-  )
-} 
+  );
+}
