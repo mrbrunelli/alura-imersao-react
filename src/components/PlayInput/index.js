@@ -7,7 +7,7 @@ const PlayInput = styled.input`
   background-color: transparent;
   border: 2px solid;
   border-color: ${({ theme }) => theme.colors.tertiary};
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-size: 18px;
   color: ${({ theme }) => theme.colors.contrastText};
   :focus {
