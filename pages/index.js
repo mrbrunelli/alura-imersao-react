@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
+import Container from '../src/components/Container';
+import Wrapper from '../src/components/Wrapper';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import PlayButton from '../src/components/PlayButton';
@@ -19,33 +21,13 @@ const Subtitle = styled.h2`
   color: ${({ theme }) => theme.colors.contrastText};
 `;
 
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 200px;
-`;
-
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
 
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <QuizContainer>
+      <Container>
         <Widget>
           <Widget.Header>
             <Title>Mundo do JavaScript</Title>
@@ -66,9 +48,16 @@ export default function Home() {
                   placeholder="Diz aí seu nome para jogar :)"
                   maxLength={30}
                   type="text"
+                  name="nomeDoUsuario"
+                  autoComplete={false}
+                  autoCapitalize={false}
+                  autoCorrect={false}
                 />
-                <PlayButton type="submit" disabled={name.length === 0}>
-                  JOGAR
+                <PlayButton
+                  type="submit"
+                  disabled={name.length === 0}
+                >
+                  {`JOGAR ${name.toUpperCase()}`}
                 </PlayButton>
               </Wrapper>
             </form>
@@ -83,7 +72,7 @@ export default function Home() {
           </Widget.Content>
         </Widget>
         <Footer />
-      </QuizContainer>
+      </Container>
       <GitHubCorner projectUrl="https://github.com/mrbrunelli" />
     </QuizBackground>
   );
